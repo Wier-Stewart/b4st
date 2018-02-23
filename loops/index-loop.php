@@ -1,34 +1,30 @@
 <?php
 /*
-The Index Post (or excerpt)
-===========================
+The Index Loop (for excerpts)
+============================
 Used by index.php, category.php and author.php
+
+Bad Idea: Wrapping anything around the article-list here.
+Another Bad Idea: Adding the Bootstrap class 'row' to the article-list itself.
+
 */
 ?>
+<div class="article-list">
+<?php if(have_posts()): ?>
+  <div class="row">
+<?php  while(have_posts()): the_post(); ?>
 
-<article class="mb-5" role="article" id="post_<?php the_ID()?>" <?php post_class(); ?> >
-  <header>
-    <h2>
-      <a href="<?php the_permalink(); ?>">
-        <?php the_title()?>
-      </a>
-    </h2>
-    <p class="text-muted">
-      <i class="far fa-calendar-alt"></i>&nbsp;<?php b4st_post_date(); ?>&nbsp;|
-      <i class="far fa-user"></i>&nbsp; <?php the_author_posts_link(); ?>&nbsp;|
-      <i class="far fa-comment"></i>&nbsp;<a href="<?php comments_link(); ?>"><?php comments_number('No comments', '1 comment', '% comments'); ?></a>
-    </p>
-  </header>
-  <main>
-    <?php the_post_thumbnail(); ?>
+      <div class='article-wrapper col-lg-4 col-md-6 col-sm-12'>
+        <?php get_template_part('content-templates/post','excerpt'); ?>
+      </div>
 
-    <?php if ( has_excerpt( $post->ID ) ) {
-  		the_excerpt();
-    ?><p><a href="<?php the_permalink(); ?>">
-    	<?php _e( '&hellip; ' . __('Continue reading', 'b4st' ) . ' <i class="fas fa-arrow-right"></i>', 'b4st' ) ?>
-      </a></p>
-  	<?php } else {
-  		the_content( __( '&hellip; ' . __('Continue reading', 'b4st' ) . ' <i class="fas fa-arrow-right"></i>', 'b4st' ) );
-		} ?>
-  </main>
-</article>
+<?php endwhile; ?>
+
+</div><!-- row -->
+
+<?php
+else:
+  get_template_part('content-templates/index-post','none');
+endif; 
+?>
+</div>

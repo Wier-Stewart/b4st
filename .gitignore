@@ -1,19 +1,12 @@
 .htaccess
 db-config.php
 *.log
-.wp-cli.yml
-.wp-cli/cache
-wordpress
-wp-config-local.php
-wp-content/plugins
-wp-content/uploads
-wp-content/cache
-wp-content/*.php
 
 backstop_data
 package-lock.json
 node_modules
-wp-content/themes/*/node_modules
+scripts/main*
+images/*
 
 *.zip
 .svn

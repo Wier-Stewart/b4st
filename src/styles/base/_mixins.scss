@@ -1,0 +1,87 @@
+@mixin vertical-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Max-Width Media Queries
+@mixin xl {
+ @media (max-width: 1440px){
+     @content;
+ }
+}
+
+@mixin lg {
+  @media (max-width: 1200px){
+      @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: 992px){
+      @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 768px){
+      @content;
+  }
+}
+
+@mixin vs {
+  @media (max-width: 600px){
+      @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: 480px){
+      @content;
+  }
+}
+
+// Min-Width Media Queries
+@mixin min-xl {
+  @media (min-width: 1440px){
+      @content;
+  }
+}
+
+@mixin min-lg {
+   @media (min-width: 1200px){
+       @content;
+   }
+}
+
+@mixin min-md {
+   @media (min-width: 992px){
+       @content;
+   }
+}
+
+@mixin min-sm {
+   @media (min-width: 768px){
+       @content;
+   }
+}
+
+@mixin min-vs {
+   @media (min-width: 600px){
+       @content;
+   }
+}
+
+@mixin min-xs {
+   @media (min-width: 480px){
+       @content;
+   }
+}
+
+// Make margin'd content full width: assumed .row margin is 15px
+@mixin anti-margin{
+  width: calc(100% + 30px);
+  max-width: calc(100% + 30px);
+  margin-left:-15px;
+  margin-right:-15px;
+}

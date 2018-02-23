@@ -14,6 +14,28 @@
 
 > Although b4st was originally intended as a simple starter theme (hence the name b4st), several people wanted child theme capability so with v2.0-beta I have made functions 'pluggable'. (It can still be used as a starter theme.)
 
+## How To Code With this
+### Mantra:  `.container .row>.col- `
+
+* Anything can go between `.container` and `.row`.
+
+* All `.row` need a `.container` at some point.
+
+* Don't even think about putting anything between a `.row` and `.col-`
+
+### Padding
+* `.container`: Adds 15px padding.
+
+* `.row` Removes the 15px padding with margin: -15px. Yes Really.
+
+* `.col-` Is then able to be 'edge to edge'
+
+* It's best to never put `.row`  and `.col-` on important tags like `article`, `section` and `main`. Put the `.row`  and `.col-` inside of those on an `.inner-wrapper` or something.
+
+* Bad Ideas: If you change the `.container` padding, you probably want to change the `.row` negative margin, as well as the `.col-` padding. Otherwise things won't line up so well.
+
+* Better Idea: Just toss in more padding on **any** other div, especially a `.col-sm>.inner-wrapper`.
+
 ## Features of b4st
 
 * Simple, intuitive, clean code.
@@ -33,8 +55,6 @@
 * **Navbar with dropdowns (child menus)** – a [custom walker nav menu class](https://github.com/SimonPadbury/b4st/blob/master/functions/navbar.php) has been built to handle the dropdowns.
 
 * Sidebar-widget-area is optional. If no widgets, then the sidebar will not be shown (main column automatically becomes full width).
-
-* A starter CSS theme – `/theme/css/b4st.css`, enqueued. (Note: do not put your styles in `styles.css`, because that is not enqueued.)
 
 * WordPress menu and WordPress search form in the Bootstrap 4 `.navbar` (Note: Bootstrap 4 navbar dropdowns supports only two levels of menu links (no sub-sub menus).
 

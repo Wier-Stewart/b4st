@@ -1,0 +1,27 @@
+@import 'base/stylesheet-header';
+@import 'base/variables.scss';
+@import 'base/mixins.scss';
+@import 'vendor/slick';
+@import 'base/fonts';
+//@import 'base/normalize';
+//@import 'base/default';
+@import 'base/globals.scss';
+@import 'base/overrides.scss';
+
+@import 'components/buttons';
+//@import 'components/comments';
+//@import 'components/contact';
+@import 'components/footer';
+@import 'components/headers';
+//@import 'components/heros';
+@import 'components/nav';
+//@import 'components/scrollToTop';
+//@import 'components/sidebars';
+//@import 'components/single';
+@import 'components/slides';
+
+@import 'pages/archive';
+@import 'pages/single';
+@import 'pages/page-default';
+@import 'pages/front-page';
+@import 'pages/authors-list';

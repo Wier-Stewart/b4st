@@ -10,7 +10,7 @@
 ?>
 
 <?php if( is_active_sidebar('sidebar-widget-area') ): ?>
-<div class="sidebar col-sm-4" id="sidebar" role="navigation">
+<div class="sidebar col-sm-12" id="sidebar" role="navigation">
   <?php dynamic_sidebar('sidebar-widget-area'); ?>
 </div>
 <?php endif; ?>
