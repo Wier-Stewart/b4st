@@ -1,33 +1,4 @@
 body.search,
-body.archive{
-
-  .page-header{
-        
-  }
-
-  .article-list {
-        margin-bottom: 4rem;
-
-        article.post-excerpt {
-          position:relative;
-
-          .entry-title,
-          .entry-excerpt,
-          footer{
-            padding: 20px 20px 0px 20px;
-          }
-
-          .entry-title {
-            font-size: 1.3rem;
-            margin:0;
-          }
-
-          footer {
-            width: 100%;
-            padding-bottom: 10px;
-            p {font-size: 0.8rem;}
-          }
-        }
-    }
+body.archive {
 
 }

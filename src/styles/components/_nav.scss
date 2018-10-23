@@ -1,0 +1,18 @@
+
+.navbar-toggler {
+	padding: 0.75rem 0.531rem !important;
+	transition: background 0.2s;
+	background: transparent !important;
+	border-radius: 0;
+	border: 0 !important;
+}
+.burger-icon {
+	@include burger(23px, 2px, 5px, $text, 10px);
+}
+
+.navbar-toggler:not(.collapsed) {
+	.burger-icon {
+		@include burger(23px, 2px, 5px, $text, 10px);
+		@include burger-to-cross;
+	}
+}
