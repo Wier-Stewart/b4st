@@ -16,3 +16,10 @@
 		@include burger-to-cross;
 	}
 }
+
+nav.navbar {
+
+	// fix for admin bar and sticky nav
+	// uncomment if using a fixed nav
+	@include admin-sticky-fix;
+}
