@@ -4,28 +4,41 @@ The Page Content Loop
 ============================
 Used by index.php, category.php and author.php
 
-Bad Idea: Wrapping anything around the article-list here.
-Another Bad Idea: Adding the Bootstrap class 'row' to the article-list itself.
+$isBuilder is a flag for Beaver Builder. checkes if it is enabled on the page or not.
 
- */
+*/
+$isBuilder = in_array('fl-builder', get_body_class());
 ?>
-<div class="article-single">
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-  <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
-    <header class=" page-header mb-4 border-bottom">
-      <h1 class='page-title'>
-        <?php the_title()?>
-      </h1>
-    </header>
-    <main>
-      <?php the_content()?>
-      <?php wp_link_pages(); ?>
-    </main>
-  </article>
+<main role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
+
+	<?php if(!$isBuilder) : ?>
+	<header id="page-header">
+		<div class="container-responsive">
+			<div class="row">
+				<div class="col-12">
+					<h1 class='page-title'><?php the_title()?></h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<?php endif; ?>
+
+	<section id="page-content">
+		<div class="container-responsive">
+			<div class="row">
+				<div class="col-12">
+					<?php the_content()?>
+					<?php wp_link_pages(); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
 <?php
-  endwhile; else:
-    wp_redirect(esc_url( home_url() ) . '/404', 404);
-    exit;
-  endif;
+endwhile; else:
+	wp_redirect(esc_url( home_url() ) . '/404', 404);
+	exit;
+endif;
 ?>
-</div>

@@ -21,7 +21,10 @@ html, body {
 a {
 	color: inherit;
 	transition: color 0.2s;
-	&:hover {text-decoration: none;}
+	&:hover {
+		text-decoration: none;
+		color: $accent;
+	}
 }
 
 p {

@@ -1,9 +1,267 @@
 /*
-Theme Name: W/S B4st Base Theme 2018
+Theme Name: W/S Starter Theme 2019
 Theme URI: https://github.com/Wier-Stewart/b4st
 Author: Wier/Stewart
 Author URI: https://wierstewart.com
 Description: Base theme using Bootstrap 4
-Version: 1.1
+Version: 2
 License: GNU General Public License v2 or later
 */
+/* Slider */
+@import url("https://fonts.googleapis.com/css?family=Gravitas+One|Merriweather:400,400i,700,700i,900,900i|Oswald:300,400,600");
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.slick-list:focus {
+  outline: none; }
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: ''; }
+
+.slick-track:after {
+  clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px; }
+
+[dir='rtl'] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+html, body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #212121;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #FFFFFF; }
+
+#body-wrapper {
+  max-width: 1440px;
+  margin: 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
+a {
+  color: inherit;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s; }
+  a:hover {
+    text-decoration: none;
+    color: orange; }
+
+p {
+  font-size: 1rem; }
+  p a {
+    font-weight: bolder;
+    border-bottom: 1px solid orange; }
+    p a:hover {
+      color: orange; }
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+/*
+|---------------
+| Helper Classes
+|---------------
+*/
+.serif {
+  font-family: "Cardo", serif; }
+
+.sans,
+.sansserif,
+.sans-serif {
+  font-family: "Rubik", sans-serif; }
+
+.bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 40%; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto; }
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.fill-right, .fill-left {
+  position: relative; }
+
+.fill-right:after, .fill-left:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background: inherit; }
+
+.fill-right:after {
+  left: 100%; }
+
+.fill-left:before {
+  right: 100%; }
+
+.navbar-toggler {
+  padding: 0.75rem 0.531rem !important;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background: transparent !important;
+  border-radius: 0;
+  border: 0 !important; }
+
+.burger-icon {
+  position: relative;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .burger-icon, .burger-icon::before, .burger-icon::after {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background-color: #212121;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    -webkit-transition-property: background-color, -webkit-transform;
+    transition-property: background-color, -webkit-transform;
+    transition-property: background-color, transform;
+    transition-property: background-color, transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+  .burger-icon::before, .burger-icon::after {
+    position: absolute;
+    content: ""; }
+  .burger-icon::before {
+    top: -7px; }
+  .burger-icon::after {
+    top: 7px; }
+
+.navbar-toggler:not(.collapsed) .burger-icon {
+  position: relative;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .navbar-toggler:not(.collapsed) .burger-icon, .navbar-toggler:not(.collapsed) .burger-icon::before, .navbar-toggler:not(.collapsed) .burger-icon::after {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background-color: #212121;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    -webkit-transition-property: background-color, -webkit-transform;
+    transition-property: background-color, -webkit-transform;
+    transition-property: background-color, transform;
+    transition-property: background-color, transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+  .navbar-toggler:not(.collapsed) .burger-icon::before, .navbar-toggler:not(.collapsed) .burger-icon::after {
+    position: absolute;
+    content: ""; }
+  .navbar-toggler:not(.collapsed) .burger-icon::before {
+    top: -7px; }
+  .navbar-toggler:not(.collapsed) .burger-icon::after {
+    top: 7px; }
+  .navbar-toggler:not(.collapsed) .burger-icon {
+    background-color: transparent; }
+  .navbar-toggler:not(.collapsed) .burger-icon::before {
+    -webkit-transform: translateY(7px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg); }
+  .navbar-toggler:not(.collapsed) .burger-icon::after {
+    -webkit-transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg); }
+
+div.comment-list {
+  margin: 40px auto; }
+  div.comment-list .alert {
+    text-align: center; }

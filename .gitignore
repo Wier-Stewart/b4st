@@ -2,8 +2,6 @@
 db-config.php
 *.log
 
-backstop_data
-package-lock.json
 node_modules
 scripts/main*
 images/*
