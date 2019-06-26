@@ -1,6 +1,15 @@
-body {
-
-    &:not(.home) {
-
-    }
+body.fl-builder {
+	#page-content > .container-responsive {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		& > .row {
+			margin-left: 0;
+			margin-right: 0;
+			& > .col-12 {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
 }
