@@ -91,3 +91,8 @@ if ( ! function_exists('b4st_excerpt_more') ) {
     }
 }
 add_filter('excerpt_more', 'b4st_excerpt_more');
+
+function b4st_do_footer() {
+	get_template_part( 'inc/footer' );
+}
+add_action( 'b4st_footer', 'b4st_do_footer' );
