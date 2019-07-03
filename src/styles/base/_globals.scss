@@ -92,10 +92,15 @@ img {
 }
 
 // Layout
-.fill-right, .fill-left {
+
+.fill-right, .fill-left, 
+.fl-fill-right > .fl-col-content,
+.fl-fill-left > .fl-col-content {
 	position: relative;
 }
-.fill-right:after, .fill-left:before {
+.fill-right:after, .fill-left:before, 
+.fl-fill-right > .fl-col-content:after,
+.fl-fill-left > .fl-col-content:before {
 	content: '';
 	position: absolute;
 	top:0;
@@ -105,3 +110,5 @@ img {
 }
 .fill-right:after {left:100%;}
 .fill-left:before {right:100%;}
+.fl-fill-right > .fl-col-content:after {left: 100%;}
+.fl-fill-left > .fl-col-content:before {right: 100%;}
